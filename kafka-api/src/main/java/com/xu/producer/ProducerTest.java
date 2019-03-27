@@ -22,7 +22,7 @@ public class ProducerTest {
         ObjectMapper mapper = new ObjectMapper();
 
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "129.204.79.247:9092");
+        properties.put("bootstrap.servers", "129.204.79.247:9092,129.204.79.247:9093");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("acks", "all");

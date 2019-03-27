@@ -31,6 +31,7 @@ public class ConsumerTest {
         props.put("enable.auto.commit", "true");
         /* 自动确认offset的时间间隔 */
         props.put("auto.commit.interval.ms", "1000");
+        /*coordinator 检测失败时间*/
         props.put("session.timeout.ms", "30000");
         /* key的序列化类 */
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
