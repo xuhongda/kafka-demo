@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author xuhongda on 2019/3/27
@@ -43,22 +45,17 @@ public class ConsumerTest {
         consumer.subscribe(Collections.singletonList("my-topic"));
 
         /* 读取数据，读取超时时间为100ms */
-
-        try{
-            while (true) {
-                //Duration java8 新的时间处理api
-                Duration duration = Duration.ofSeconds(1);
-                ConsumerRecords<String, String> records = consumer.poll(duration);
-                for (ConsumerRecord<String, String> record : records) {
-                    String value = record.value();
-                    People people = mapper.readValue(value, People.class);
-                    log.info("age = {}", people.getAge());
-                    System.out.printf("offset = %d, key = %s, value = %s", record.offset(), record.key(), record.value());
-                }
+        //Duration java8 新的时间处理api
+        Duration duration = Duration.ofSeconds(1);
+        while (true) {
+            //从kafka 角度来说 poll 就是成功消费消息
+            ConsumerRecords<String, String> records = consumer.poll(duration);
+            for (ConsumerRecord<String, String> record : records) {
+                String value = record.value();
+                People people = mapper.readValue(value, People.class);
+                log.info("age = {}", people.getAge());
+                System.out.printf("offset = %d, key = %s, value = %s", record.offset(), record.key(), record.value());
             }
-        }finally {
-            consumer.close();
         }
-
     }
 }
