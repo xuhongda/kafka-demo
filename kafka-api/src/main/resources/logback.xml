@@ -28,9 +28,9 @@
     <!-- ch.qos.logback.core.rolling.RollingFileAppender 异常日志输出 -->
     <appender name="ERROR"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${catalina.base}/logs/guide_error.log</file>
+        <file>logs/guide_error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/guide.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <fileNamePattern>logs/guide.%d{yyyy-MM-dd}-%i.log</fileNamePattern>
             <maxHistory>30</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
