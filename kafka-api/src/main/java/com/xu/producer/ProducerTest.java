@@ -24,11 +24,12 @@ public class ProducerTest {
 
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) throws JsonProcessingException, InterruptedException {
 
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "129.204.79.247:9092");
-        // properties.put("bootstrap.servers", "172.20.1.103:9092,172.20.1.104:9092,172.20.1.104:9092");
+        properties.put("bootstrap.servers", "192.168.234.130:9092");
+        //properties.put("bootstrap.servers", "129.204.79.247:9092");
+        //properties.put("bootstrap.servers", "172.20.1.103:9092,172.20.1.104:9092,172.20.1.104:9092");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("acks", "all");
@@ -44,7 +45,7 @@ public class ProducerTest {
         sendToTopic(properties, list);
     }
 
-    private static void sendToTopic(Properties properties, List<List<? extends Object>> objects) throws JsonProcessingException {
+    private static void sendToTopic(Properties properties, List<List<? extends Object>> objects) throws JsonProcessingException, InterruptedException {
 
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(properties);
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -71,9 +72,9 @@ public class ProducerTest {
         }
         executorService.shutdown();
         while (true) {
-            boolean terminated = executorService.isTerminated();
-            log.info("线程池任务已结束 = {}", terminated);
-            if (terminated) {
+            if (executorService.isTerminated()) {
+                //注意需要调用close 方法
+                kafkaProducer.close();
                 break;
             }
         }
