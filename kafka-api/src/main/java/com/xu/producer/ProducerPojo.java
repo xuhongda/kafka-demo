@@ -2,7 +2,6 @@ package com.xu.producer;
 
 import com.xu.pojo.DeviceStatus;
 import com.xu.pojo.People;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +12,20 @@ import java.util.List;
  */
 public class ProducerPojo {
 
+
+    /**
+     * 创建 DeviceStatus List 集合
+     *
+     * @return List
+     */
     public static List<DeviceStatus> createDeviceStatus() {
-
         List<DeviceStatus> deviceStatusList = new ArrayList<>();
-
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             DeviceStatus deviceStatus = new DeviceStatus();
-            deviceStatus.setDeviceId("399666020035");
+            deviceStatus.setObjId("LGBH52E01HY349442");
+            deviceStatus.setDeviceId("30015200003");
             deviceStatusList.add(deviceStatus);
         }
-
         return deviceStatusList;
     }
 
