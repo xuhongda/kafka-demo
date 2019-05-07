@@ -26,22 +26,11 @@ public class ProducerTest {
 
     public static void main(String[] args) throws JsonProcessingException, InterruptedException {
 
-        Properties properties = new Properties();
-        properties.put("bootstrap.servers", "192.168.234.130:9092");
-        //properties.put("bootstrap.servers", "129.204.79.247:9092");
-        //properties.put("bootstrap.servers", "172.20.1.103:9092,172.20.1.104:9092,172.20.1.104:9092");
-        properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        properties.put("acks", "all");
-        properties.put("retries", 0);
-        properties.put("batch.size", 16384);
-        properties.put("linger.ms", 1);
-        properties.put("buffer.memory", 33554432);
-        List<People> peoples = createPeoples();
-        List<DeviceStatus> deviceStatus = createDeviceStatus();
+        Properties properties = ProducerProperties.getProducerPropertites();
+
         List<List<? extends Object>> list = new ArrayList<>();
-        list.add(peoples);
-        list.add(deviceStatus);
+        //list.add(createPeoples());
+        list.add(ProducerPojo.createDeviceStatus());
         sendToTopic(properties, list);
     }
 
@@ -78,26 +67,5 @@ public class ProducerTest {
                 break;
             }
         }
-    }
-
-    private static List<DeviceStatus> createDeviceStatus() {
-        List<DeviceStatus> deviceStatusList = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            DeviceStatus deviceStatus = new DeviceStatus();
-            deviceStatus.setDeviceId("399666020035");
-            deviceStatusList.add(deviceStatus);
-        }
-        return deviceStatusList;
-    }
-
-    private static List<People> createPeoples() {
-        List<People> peopleList = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            People people = new People();
-            people.setAge(18);
-            people.setName("xu");
-            peopleList.add(people);
-        }
-        return peopleList;
     }
 }
