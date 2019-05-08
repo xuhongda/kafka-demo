@@ -2,6 +2,10 @@ package com.xu.producer;
 
 import com.xu.pojo.DeviceStatus;
 import com.xu.pojo.People;
+import lombok.extern.slf4j.Slf4j;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +14,7 @@ import java.util.List;
  * com.xu.producer
  * kafka-demo
  */
+@Slf4j
 public class ProducerPojo {
 
 
@@ -24,6 +29,7 @@ public class ProducerPojo {
             DeviceStatus deviceStatus = new DeviceStatus();
             deviceStatus.setObjId("LGBH52E01HY349442");
             deviceStatus.setDeviceId("30015200003");
+            deviceStatus.setPosTime(Timestamp.from(Instant.now()));
             deviceStatusList.add(deviceStatus);
         }
         return deviceStatusList;
