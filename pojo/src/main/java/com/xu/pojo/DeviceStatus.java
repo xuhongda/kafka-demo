@@ -18,79 +18,79 @@ import java.sql.Timestamp;
 public class DeviceStatus implements java.io.Serializable {
     // ------------ Fields ------------
     // 通信网关的编号
-    // protected String gateNo;
+    // public String gateNo;
 
-    protected String deviceId;
+    public String deviceId;
     // 设备绑定的上层应用的编号
-    // protected String appId;
-    protected String objId;
+    // public String appId;
+    public String objId;
     // 设备的运行状态
-    // protected Short serviceStatus;
+    // public Short serviceStatus;
     // 设备在线状态
-    // protected Short onlineStatus;
+    // public Short onlineStatus;
     // 设备报警状态
-    protected Short alarmStatus = 0;
+    public Short alarmStatus = 0;
     // 设备报警时间
-    // protected Timestamp alarmTime;
-    // protected Short posMethod;
+    // public Timestamp alarmTime;
+    // public Short posMethod;
     @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
-    protected Timestamp posTime;
-    // protected Short posPrecision;
-    protected Double posLongitude;
-    protected Double posLatitude;
-    protected Integer posAltitude;
-    protected Integer posSpeed;
-    // protected Integer posDirection;
-    // protected String networkDataId;
-    protected Double accForward = 0.0d;
-    protected Double accSide = 0.0d;
-    protected Double accVerticle = 0.0d;
-    // protected Short rolloverLevel;
-    // protected Timestamp rolloverReportTime;
-    // protected Short voltageLevel;
-    // protected Timestamp voltageReportTime;
-    // protected Short collisionLevel;
-    // protected Timestamp collisionReportTime;
-    // protected Short signalLevel;
-    // protected Timestamp signalReportTime;
-    // protected Integer statusAreaMonitor;
-    // protected String statushisId;
-    // protected String statushisExtId;
-    protected Double powerVoltage;
+    public Timestamp posTime;
+    // public Short posPrecision;
+    public Double posLongitude;
+    public Double posLatitude;
+    public Integer posAltitude;
+    public Integer posSpeed;
+    // public Integer posDirection;
+    // public String networkDataId;
+    public Double accForward = 0.0d;
+    public Double accSide = 0.0d;
+    public Double accVerticle = 0.0d;
+    // public Short rolloverLevel;
+    // public Timestamp rolloverReportTime;
+    // public Short voltageLevel;
+    // public Timestamp voltageReportTime;
+    // public Short collisionLevel;
+    // public Timestamp collisionReportTime;
+    // public Short signalLevel;
+    // public Timestamp signalReportTime;
+    // public Integer statusAreaMonitor;
+    // public String statushisId;
+    // public String statushisExtId;
+    public Double powerVoltage;
     // 设备的整个生命周期的状态
-    // protected Integer deviceStatus = 1;
-    // protected String gid;
-    protected Short accStatus;
-    // protected String brandId;
-    // protected String gidVersion;
-    // protected String dtcVersion;
-    protected String softwareVersion;
-    // protected String hardwareVersion;
-    // protected String gsmType;
-    // protected String bootloaderVersion;
-    // protected Integer updateFlag;
-    // protected String softwareDate;
-    // protected String carType;
-    // protected Short offlineEventType;
-   // protected Timestamp updateStatusTime = new Timestamp(System.currentTimeMillis());
+    // public Integer deviceStatus = 1;
+    // public String gid;
+    public Short accStatus;
+    // public String brandId;
+    // public String gidVersion;
+    // public String dtcVersion;
+    public String softwareVersion;
+    // public String hardwareVersion;
+    // public String gsmType;
+    // public String bootloaderVersion;
+    // public Integer updateFlag;
+    // public String softwareDate;
+    // public String carType;
+    public Short offlineEventType;
+    public Timestamp updateStatusTime = new Timestamp(System.currentTimeMillis());
 
-    private Integer duration;    // 事件持续时长(怠速)
+    public Integer duration;    // 事件持续时长(怠速)
     //add by mouwc 2015-05-14
     //gps表不存
-    private String videoKey;    // 欧克兰项目要求
+    public String videoKey;    // 欧克兰项目要求
     //gps表不存
-    private String videoUrl;    // 欧克兰项目要求
+    public String videoUrl;    // 欧克兰项目要求
 
-    private String multimediaId;    // 多媒体事件ID
+    public String multimediaId;    // 多媒体事件ID
 
-    private String vin;
+    public String vin;
 
-    private String vinReport;
+    public String vinReport;
 
-    private String describe;
+    public String describe;
 
-    private String satellites;//信号强度
+    public String satellites;//信号强度
 
-    private Integer distanceTotal;//里程 米
+    public Integer distanceTotal;//里程 米
 
 }

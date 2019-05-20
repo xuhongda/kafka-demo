@@ -22,13 +22,13 @@ public class ProducerTest {
     private static ObjectMapper mapper = new ObjectMapper();
 
     public static void main(String[] args) throws JsonProcessingException, InterruptedException {
-
+        log.error("xxx");
         Properties properties = ProducerProperties.getProducerPropertites();
-        sendToTopic(properties, ProducerPojo.createDeviceStatus());
+        sendToTopic(properties, ProducerPojo.createCreashDeviceStatus());
     }
 
     private static void sendToTopic(Properties properties, List list) throws JsonProcessingException, InterruptedException {
-
+        log.warn("dont poweroff");
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(properties);
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -40,8 +40,8 @@ public class ProducerTest {
 
             for (Object o : list) {
                 kafka(kafkaProducer, o);
-            }
 
+            }
 
         });
 
@@ -72,5 +72,6 @@ public class ProducerTest {
                 log.info("kafka 发送消息失败 = {}", finalJsonStr);
             }
         });
+
     }
 }
