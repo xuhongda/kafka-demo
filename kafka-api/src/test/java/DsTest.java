@@ -82,4 +82,12 @@ public class DsTest {
         }
         log.info("DeviceStatus = {}", deviceStatus);
     }
+
+
+    @Test
+    public void test1(){
+        String s = "s";
+        String s2 = "s";
+        System.out.println(s==s2);
+    }
 }

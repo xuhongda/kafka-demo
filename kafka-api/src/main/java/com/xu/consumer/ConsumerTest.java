@@ -7,7 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -27,7 +27,7 @@ public class ConsumerTest {
         /* 定义consumer */
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
         /* 消费者订阅的topic, 可同时订阅多个 */
-        consumer.subscribe(Collections.singletonList("device_status"));
+        consumer.subscribe(Arrays.asList("device_status","finance_alarm_msg"));
 
         /* 读取数据，读取超时时间为100ms */
         //Duration java8 新的时间处理api
@@ -44,7 +44,7 @@ public class ConsumerTest {
                     for (ConsumerRecord<String, String> record : records) {
                         String value = record.value();
                         System.out.printf("offset = %d, key = %s, value = %s", record.offset(), record.key(), record.value());
-                        log.info(value);
+                        log.info("消费 = {}",value);
                     }
                 }
             });
