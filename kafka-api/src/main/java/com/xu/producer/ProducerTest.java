@@ -70,7 +70,7 @@ public class ProducerTest {
             if (exception == null) {
                 log.info("kafka发送消息成功 = {}", finalJsonStr);
             } else {
-                log.info("kafka 发送消息失败 = {}", finalJsonStr);
+                log.info("kafka 发送消息失败 = {} ; exception = {}", finalJsonStr,exception);
             }
         });
 
