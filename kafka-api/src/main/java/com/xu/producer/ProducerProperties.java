@@ -14,6 +14,7 @@ public class ProducerProperties {
         properties.put("bootstrap.servers", "192.168.234.130:9092,192.168.234.130:9093,192.168.234.130:9094");
         //properties.put("bootstrap.servers", "129.204.79.247:9092");
         //properties.put("bootstrap.servers", "172.20.1.103:9092,172.20.1.104:9092,172.20.1.104:9092");
+        // properties.put("bootstrap.servers", "172.20.1.103:9092,172.20.1.104:9092,172.20.1.105:9092,172.20.1.106:9092");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("acks", "all");

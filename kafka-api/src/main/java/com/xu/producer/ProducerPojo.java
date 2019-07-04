@@ -71,7 +71,7 @@ public class ProducerPojo {
             DeviceStatus deviceStatus = new DeviceStatus();
             deviceStatus.setObjId("LGBH52E01HY349442");
             deviceStatus.setDeviceId("30015200003");
-            deviceStatus.setAlarmStatus((short) 31);
+            deviceStatus.setAlarmStatus((short) 60);
             deviceStatus.setDescribe("0");
             deviceStatus.setOfflineEventType((short) 2);
             Date date = new Date();
