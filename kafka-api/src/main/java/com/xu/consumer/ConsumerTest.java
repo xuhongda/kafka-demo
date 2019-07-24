@@ -19,6 +19,7 @@ import java.util.concurrent.Executors;
  */
 @Slf4j
 public class ConsumerTest {
+
     public static void main(String[] args) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
