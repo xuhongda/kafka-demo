@@ -35,8 +35,8 @@ public class ConsumerTest {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-
-        for (int i = 0; i < 10; i++) {
+        int num = 10;
+        for (int i = 0; i < num; i++) {
             executorService.submit(() -> {
                 while (true) {
                     //从kafka 角度来说 poll 就是成功消费消息

@@ -96,11 +96,12 @@ public class ProducerPojo {
             deviceStatus.setDeviceId("14144539046");
             deviceStatus.setAlarmStatus((short) 6);
             deviceStatus.setPosSpeed(0);
-            deviceStatus.setAccForward(0.2);
-            deviceStatus.setAccSide(7.0);
-            deviceStatus.setAccVerticle(-0.1);
+            deviceStatus.setAccForward(8.0);
+            deviceStatus.setAccSide(8.0);
+            deviceStatus.setAccVerticle(8.0);
             deviceStatus.setPosLongitude(119.408152);
             deviceStatus.setPosLatitude(32.40865);
+            deviceStatus.setMultimediaId("cff99f35-d2a8-4702-9054-449efeb34cda00000000000000");
             deviceStatus.setUpdateStatusTime(Timestamp.valueOf("2019-05-19 11:47:09.865"));
 
             Calendar instance = Calendar.getInstance();
