@@ -59,7 +59,6 @@
     <logger name="com.xu.consumer.ConsumerTest" level="DEBUG">
         <!--引用配置-->
         <appender-ref ref="consumer" />
-        <appender-ref ref="console"/>
         <level value="info"/>
     </logger>
 
@@ -68,7 +67,6 @@
     <logger name="com.xu.producer.ProducerTest" level="debug">
         <!--引用配置-->
         <appender-ref ref="produce"/>
-        <appender-ref ref="console"/>
         <level value="info"/>
     </logger>
 
