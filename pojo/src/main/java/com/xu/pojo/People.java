@@ -21,4 +21,6 @@ public class People implements Serializable {
     private Integer age;
 
     private String name;
+
+    private Double weight;
 }

@@ -39,13 +39,13 @@ public class ProducerPojo {
      * 车辆离线
      * @return list
      */
-    public static List<DeviceStatus> createOfflineDeviceStatus() {
+    public static List<DeviceStatus> createXx() {
         List<DeviceStatus> deviceStatusList = new ArrayList<>();
-        for (int i = 0; i < 18; i++) {
+        for (int i = 0; i < 1; i++) {
             DeviceStatus deviceStatus = new DeviceStatus();
-            deviceStatus.setObjId("LGBH52E01HY349442");
+            deviceStatus.setObjId("00011c590a024087962c18086824440a");
             deviceStatus.setDeviceId("30015200003");
-            deviceStatus.setAlarmStatus((short) 47);
+            deviceStatus.setAlarmStatus((short) 46);
             deviceStatus.setDescribe("0");
             deviceStatus.setOfflineEventType((short) 2);
             Date date = new Date();
@@ -91,19 +91,21 @@ public class ProducerPojo {
         List<DeviceStatus> deviceStatusList = new ArrayList<>();
         for (int i = 0; i < 1; i++) {
             DeviceStatus deviceStatus = new DeviceStatus();
+            deviceStatus.setMultimediaEventCode("9");
+            deviceStatus.setPosDirection(1);
             deviceStatus.setSoftwareVersion("GIDAG5040101");
             deviceStatus.setObjId("13090615385356367");
-            deviceStatus.setDeviceId("14144539046");
+            deviceStatus.setDeviceId("2012521446");
             deviceStatus.setAlarmStatus((short) 6);
             deviceStatus.setPosSpeed(0);
-            deviceStatus.setAccForward(8.0);
-            deviceStatus.setAccSide(8.0);
-            deviceStatus.setAccVerticle(8.0);
+            deviceStatus.setAccForward(5.0);
+            deviceStatus.setAccSide(5.0);
+            deviceStatus.setAccVerticle(5.0);
             deviceStatus.setPosLongitude(119.408152);
             deviceStatus.setPosLatitude(32.40865);
             deviceStatus.setMultimediaId("cff99f35-d2a8-4702-9054-449efeb34cda00000000000000");
             deviceStatus.setUpdateStatusTime(Timestamp.valueOf("2019-05-19 11:47:09.865"));
-
+            deviceStatus.setVideoUrl("");
             Calendar instance = Calendar.getInstance();
             instance.add(Calendar.HOUR_OF_DAY,8);
             Date time = instance.getTime();
@@ -115,6 +117,40 @@ public class ProducerPojo {
         }
         return deviceStatusList;
     }
+
+    /**
+     * GPS 长时间不定位
+     * @return list
+     */
+    public static List<DeviceStatus> createLongtermLocationStatus() {
+        List<DeviceStatus> deviceStatusList = new ArrayList<>();
+        for (int i = 0; i < 1; i++) {
+            DeviceStatus deviceStatus = new DeviceStatus();
+            deviceStatus.setSoftwareVersion("GIDAG5040101");
+            deviceStatus.setObjId("13090615385356367");
+            deviceStatus.setDeviceId("14144539046");
+            deviceStatus.setAlarmStatus((short) 8);
+            deviceStatus.setPosSpeed(0);
+            deviceStatus.setAccForward(8.0);
+            deviceStatus.setAccSide(8.0);
+            deviceStatus.setAccVerticle(8.0);
+            deviceStatus.setPosLongitude(119.408152);
+            deviceStatus.setPosLatitude(32.40865);
+            deviceStatus.setMultimediaId("cff99f35-d2a8-4702-9054-449efeb34cda00000000000000");
+            deviceStatus.setUpdateStatusTime(Timestamp.valueOf("2019-05-19 11:47:09.865"));
+
+           /* Calendar instance = Calendar.getInstance();
+            instance.add(Calendar.HOUR_OF_DAY,8);
+            Date time = instance.getTime();*/
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Timestamp timestamp = Timestamp.valueOf(format.format(new Date()));
+            deviceStatus.setPosTime(timestamp);
+            log.info("postTime = {}", timestamp);
+            deviceStatusList.add(deviceStatus);
+        }
+        return deviceStatusList;
+    }
+
 
     public static List<People> createPeoples() {
         List<People> peopleList = new ArrayList<>();

@@ -1,4 +1,5 @@
 import com.xu.pojo.DeviceStatus;
+import com.xu.pojo.People;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -89,5 +90,21 @@ public class DsTest {
         String s = "s";
         String s2 = "s";
         System.out.println(s==s2);
+    }
+
+
+    @Test
+    public void test7(){
+
+        People p = new People();
+        //p = null;
+       // p.setAge(11);
+       // Double x = (null==p?0.0:p.getWeight());   //exception
+        Double x = (null==p?Double.valueOf(0.0):p.getWeight());
+        log.info("x ={}",x);
+        p.setWeight(0.0);
+        if (p.getWeight() == 0.0){
+            System.out.println("ll");
+        }
     }
 }

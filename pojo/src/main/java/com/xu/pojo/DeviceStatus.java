@@ -19,7 +19,7 @@ public class DeviceStatus implements java.io.Serializable {
     // ------------ Fields ------------
     // 通信网关的编号
     // public String gateNo;
-
+    protected String multimediaEventCode;
     public String deviceId;
     // 设备绑定的上层应用的编号
     // public String appId;
@@ -40,7 +40,7 @@ public class DeviceStatus implements java.io.Serializable {
     public Double posLatitude;
     public Integer posAltitude;
     public Integer posSpeed;
-    // public Integer posDirection;
+    public Integer posDirection;
     // public String networkDataId;
     public Double accForward = 0.0d;
     public Double accSide = 0.0d;

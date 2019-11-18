@@ -28,7 +28,7 @@ public class ConsumerTest {
         /* 定义consumer */
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
         /* 消费者订阅的topic, 可同时订阅多个 */
-        consumer.subscribe(Arrays.asList("device_status","finance_alarm_msg"));
+        consumer.subscribe(Arrays.asList("device_status","finance_alarm_msg","common_finance_alarm_msg","xxyyzz"));
 
         /* 读取数据，读取超时时间为100ms */
         //Duration java8 新的时间处理api
