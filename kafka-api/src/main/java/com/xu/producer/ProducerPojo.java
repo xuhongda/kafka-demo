@@ -91,7 +91,7 @@ public class ProducerPojo {
         List<DeviceStatus> deviceStatusList = new ArrayList<>();
         for (int i = 0; i < 1; i++) {
             DeviceStatus deviceStatus = new DeviceStatus();
-            deviceStatus.setMultimediaEventCode("9");
+            deviceStatus.setMultimediaEventCode("8");
             deviceStatus.setPosDirection(1);
             deviceStatus.setSoftwareVersion("GIDAG5040101");
             deviceStatus.setObjId("13090615385356367");

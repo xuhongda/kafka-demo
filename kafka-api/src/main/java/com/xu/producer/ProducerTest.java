@@ -21,13 +21,13 @@ public class ProducerTest {
 
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public static void main(String[] args) throws JsonProcessingException, InterruptedException {
+    public static void main(String[] args)  {
 
         Properties properties = ProducerProperties.getProducerPropertites();
         sendToTopic(properties, ProducerPojo.createCreashDeviceStatus());
     }
 
-    private static void sendToTopic(Properties properties, List list) throws JsonProcessingException, InterruptedException {
+    private static void sendToTopic(Properties properties, List list)  {
 
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(properties);
 
