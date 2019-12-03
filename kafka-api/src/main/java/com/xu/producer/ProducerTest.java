@@ -33,17 +33,11 @@ public class ProducerTest {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-
         executorService.submit(() -> {
-
             log.info("处理线程 = {}", Thread.currentThread().getName());
-
             for (Object o : list) {
-
                 kafka(kafkaProducer, o);
-
             }
-
         });
 
         executorService.shutdown();
