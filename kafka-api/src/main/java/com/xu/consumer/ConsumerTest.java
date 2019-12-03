@@ -20,9 +20,7 @@ import java.util.concurrent.Executors;
 @Slf4j
 public class ConsumerTest {
 
-    public static void main(String[] args) throws IOException {
-
-        ObjectMapper mapper = new ObjectMapper();
+    public static void main(String[] args) {
 
         Properties properties = ConsumerProperties.getConsumerProperties();
         /* 定义consumer */
