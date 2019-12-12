@@ -1,11 +1,9 @@
 package com.xu.consumer;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
