@@ -22,6 +22,8 @@ public class ProducerProperties {
         properties.put("batch.size", 16384);
         properties.put("linger.ms", 1);
         properties.put("buffer.memory", 33554432);
+        //
+       // properties.put("group.id","testGroup");
         return properties;
     }
 }

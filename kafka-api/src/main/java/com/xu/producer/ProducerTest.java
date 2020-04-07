@@ -37,6 +37,7 @@ public class ProducerTest {
             log.info("处理线程 = {}", Thread.currentThread().getName());
             for (Object o : list) {
                 kafka(kafkaProducer, o);
+
             }
         });
 

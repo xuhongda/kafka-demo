@@ -7,7 +7,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -20,7 +19,7 @@ import java.util.Set;
 public class DsTest {
 
     @Test
-    public void test() throws InvocationTargetException, IllegalAccessException {
+    public void test() throws IllegalAccessException {
 
 
         DeviceStatus deviceStatus = new DeviceStatus();
@@ -66,9 +65,7 @@ public class DsTest {
         Method[] methods = deviceStatusClass.getMethods();
 
         Set<String> strings = map.keySet();
-        Iterator<String> iterator = strings.iterator();
-        while (iterator.hasNext()) {
-            String next = iterator.next();
+        for (String next : strings) {
             log.info("key  ={}", next.trim());
             for (Field field : declaredFields) {
                 Class<?> type = field.getType();
