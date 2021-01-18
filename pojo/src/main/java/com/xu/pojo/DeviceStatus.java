@@ -93,4 +93,17 @@ public class DeviceStatus implements java.io.Serializable {
 
     public Integer distanceTotal;//里程 米
 
+    private String msgType;
+
+    /**
+     *  UBI  精准碰撞角度
+     */
+    private Integer collisionAngle;
+
+
+    /**
+     * 碰撞类型：1、主动碰撞 2、被动碰撞
+     */
+    private Integer collisionType;
+
 }

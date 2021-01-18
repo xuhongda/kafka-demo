@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.*;
@@ -21,10 +22,10 @@ public class ProducerTest {
 
     private static ObjectMapper mapper = new ObjectMapper();
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws ParseException {
 
         Properties properties = ProducerProperties.getProducerPropertites();
-        sendToTopic(properties, ProducerPojo.createCreashDeviceStatus());
+        sendToTopic(properties, ProducerPojo.cxxx());
     }
 
     private static void sendToTopic(Properties properties, List list)  {
@@ -33,13 +34,15 @@ public class ProducerTest {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-        executorService.submit(() -> {
-            log.info("处理线程 = {}", Thread.currentThread().getName());
-            for (Object o : list) {
-                kafka(kafkaProducer, o);
 
-            }
-        });
+        for (Object o: list){
+            executorService.submit(() -> {
+                log.info("处理线程 = {}", Thread.currentThread().getName());
+                kafka(kafkaProducer, o);
+            });
+        }
+
+
 
         executorService.shutdown();
         while (true) {

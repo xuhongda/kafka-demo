@@ -220,6 +220,56 @@ public class ProducerPojo {
     }
 
 
+
+    /**
+     *精准碰撞
+     *
+     * @return list
+     */
+    public static List<DeviceStatus> cxxx() throws ParseException {
+        List<DeviceStatus> deviceStatusList = new ArrayList<>();
+        for (int i = 0; i < 1; i++) {
+            DeviceStatus deviceStatus = new DeviceStatus();
+           // deviceStatus.setMultimediaEventCode(String.valueOf(56));
+            deviceStatus.setSoftwareVersion("GIDAG5040101");
+            deviceStatus.setObjId("763537468a5f4ef883a80c135aeddc34");
+            deviceStatus.setDeviceId("2012521446");
+
+            deviceStatus.setAlarmStatus((short) 2);
+            deviceStatus.setCollisionAngle(111);
+            deviceStatus.setCollisionType(1);
+            deviceStatus.setPosSpeed(0);
+            deviceStatus.setAccForward(8.0);
+            deviceStatus.setAccSide(8.0);
+            deviceStatus.setAccVerticle(8.0);
+            deviceStatus.setPosLongitude(119.408152);
+            deviceStatus.setPosDirection(111);
+            deviceStatus.setPosLatitude(32.40865);
+
+            deviceStatus.setMultimediaId("cff99f35-d2a8-4702-9054-449efeb34cda00000000000000");
+            deviceStatus.setUpdateStatusTime(Timestamp.valueOf("2021-01-13 09:15:09.865"));
+            deviceStatus.setMsgType("UBI");
+            deviceStatus.setCollisionAngle(-140);
+           /* Calendar instance = Calendar.getInstance();
+            instance.add(Calendar.HOUR_OF_DAY,8);
+            Date time = instance.getTime();*/
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String t = "2021-01-08 03:40:22";
+            Date parse = format.parse(t);
+
+             Calendar instance = Calendar.getInstance();
+             instance.setTime(parse);
+            instance.add(Calendar.HOUR_OF_DAY,8);
+            Date time = instance.getTime();
+            Timestamp timestamp = Timestamp.valueOf(format.format(time));
+            deviceStatus.setPosTime(timestamp);
+            log.info("postTime = {}", timestamp);
+            deviceStatusList.add(deviceStatus);
+        }
+        return deviceStatusList;
+    }
+
+
     public static List<People> createPeoples() {
         List<People> peopleList = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
