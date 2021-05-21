@@ -106,4 +106,9 @@ public class DeviceStatus implements java.io.Serializable {
      */
     private Integer collisionType;
 
+    /**
+     *  碰撞因数
+     */
+    private Integer collisionFactor;
+
 }

@@ -6,6 +6,7 @@
     <modules>
         <module>kafka-api</module>
         <module>pojo</module>
+        <module>zookeeper</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -17,7 +18,7 @@
     <artifactId>kafka-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kafka-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <description>kafka and zookeeper</description>
 
     <properties>
         <java.version>1.8</java.version>
